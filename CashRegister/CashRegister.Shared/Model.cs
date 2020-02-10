@@ -47,5 +47,11 @@ namespace CashRegister.Shared
             [JsonPropertyName("totalPrice")]
             public decimal TotalPrice { get; set; }
         }
+
+        public class ReceiptLineDto
+        {
+            public int ProductID { get; set; }
+            public int Amount { get; set; }
+        }
     }
 }
