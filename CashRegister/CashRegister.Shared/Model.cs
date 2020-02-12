@@ -50,7 +50,10 @@ namespace CashRegister.Shared
 
         public class ReceiptLineDto
         {
+            [JsonPropertyName("productID")]
             public int ProductID { get; set; }
+
+            [JsonPropertyName("amount")]
             public int Amount { get; set; }
         }
     }

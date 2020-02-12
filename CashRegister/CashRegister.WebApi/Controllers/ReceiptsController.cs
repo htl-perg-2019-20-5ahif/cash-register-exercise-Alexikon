@@ -47,7 +47,7 @@ namespace CashRegister.WebApi.Controllers
                 ReceiptTimestamp = DateTime.UtcNow,
                 ReceiptLines = receiptLineDto.Select(rl => new ReceiptLine
                 {
-                    // I don't want to question your code, but why does ID have to be set? 
+                    // I don't want to question your code from readme.md, but why does ID have to be set? 
                     // I thought it is automatically set at 0 when nobody does something
                     ID = 0,
                     Product = products[rl.ProductID],
@@ -60,7 +60,7 @@ namespace CashRegister.WebApi.Controllers
             await DataContext.Receipts.AddAsync(newReceipt);
             await DataContext.SaveChangesAsync();
 
-            return CreatedAtRoute("Receipts/POST", new { id = newReceipt.ID }, newReceipt);
+            return CreatedAtRoute("api/Receipts/POST", new { id = newReceipt.ID }, newReceipt);
         }
     }
 }
